@@ -42,7 +42,7 @@ function validEmail($er, $data, $key)
 
 function cleanXss($key)
 {
-	return trim(strip_tags($key));
+	return trim(strip_tags($key), "\n");
 }
 
 function generateGroupName($tab1, $tab2, string $balise = 'div', string $color = 'pink')
@@ -53,3 +53,24 @@ function generateGroupName($tab1, $tab2, string $balise = 'div', string $color =
 	$concat = ucwords($index1 . ' ' . $index2);
 	return '<'.$balise.' style="background-color: ' .$color. ';">' .$concat. '</'.$balise.'>';
 }
+
+function getValue($key,$data = null){
+    if(!empty($_POST[$key])) {
+        return $_POST[$key];
+    } else {
+        if(!empty($data)) {
+            return $data;
+        }
+    }
+    return '';
+}
+
+function abortt404() {
+	header('HTTP/1.0 404 Not Found');
+	header('Location: 404.php');
+}
+
+function getError($errors, $key) {
+	return (!empty($errors[$key])) ? $errors[$key] : '';
+}
+
