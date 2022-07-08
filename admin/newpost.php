@@ -1,7 +1,7 @@
 <?php
-require('../../includ/pdo.php');
-require('../../includ/function.php');
-require('../../includ/request.php');
+require('../includ/pdo.php');
+require('../includ/function.php');
+require('../includ/request.php');
 $errors = [];
 
 if (!empty($_POST['submitted'])) {
@@ -23,7 +23,7 @@ if (!empty($_POST['submitted'])) {
 		$query->bindValue(':auteur',$auteur, PDO::PARAM_STR);
 		$query->bindValue(':status', $status,PDO::PARAM_STR);
 		$query->execute();
-		header('Location: ../index.php');
+		header('Location: listingpost.php');
 	}
 }
 
@@ -31,7 +31,7 @@ if (!empty($_POST['submitted'])) {
 
 
 
-include('header-back.php'); ?>
+include('includ/header-back.php'); ?>
 
 <form action="" method="post" class="wrap" novalidate>
 	<label for="title">Titre</label>
@@ -64,4 +64,4 @@ include('header-back.php'); ?>
 
 	<input type="submit" name="submitted" value="Ajouter un New Post !">
 </form>
-<?php include('footer-back.php');
+<?php include('includ/footer-back.php');

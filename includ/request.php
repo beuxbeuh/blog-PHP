@@ -10,10 +10,10 @@ function getBeer($id)
         return $query->fetch();
 }
 
-function getAllBeer($nbr, $where = 'DESC')
+function getAllProduct($tables = 'articles', $where = 'DESC')
 {
         global $pdo;
-        $sql = "SELECT * FROM `beer` ORDER BY created_at $where LIMIT $nbr;";
+        $sql = "SELECT * FROM $tables ORDER BY created_at $where";
         $query = $pdo->prepare($sql);
         $query->execute();
         return $query->fetchAll();
