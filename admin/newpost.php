@@ -36,7 +36,7 @@ include('includ/header-back.php'); ?>
 <form action="" method="post" class="wrap" novalidate>
 	<label for="title">Titre</label>
 	<input type="text" name="title" id="title" value="<?php if(!empty($_POST['title'])) {echo $_POST['title'];} ?>">
-	<span class="error"><?php /* debug();*/ ?></span>
+	<span class="error"> <?php if(!empty($errors['title'])) { echo $errors['title']; } ?> </span>
 
 	<label for="content">Contenu</label>
         <textarea name="content" id="content" cols="30" rows="10"><?php if(!empty($_POST['content'])) { echo $_POST['content']; } ?></textarea>
