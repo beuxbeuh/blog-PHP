@@ -9,14 +9,31 @@ $articles = getAllProduct();
 include('includ/header-back.php'); ?>
 
 <h1>List Products/Tables</h1>
-<ul> <?php foreach ($articles as $article)  { ?>
-	<li> <?php echo $article['title']; ?>
-		<p> <?= $article['content']; ?></p>
-		<h4> <?= $article['auteur']; ?></h4>
-		<p> <?= $article['created_at']; ?></p>
-		<p> <?= $article['status']; ?></p>
-	</li>
+<table>
+	<thead>
+	 <tr>
+		<th>Id</th>
+		<th>Title</th>
+		<th>Content</th>
+		<th>Autor</th>
+		<th>Created</th>
+		<th>status</th>
+		<th>Btn Edit</th>
+	 </tr>
+	</thead>
+	<tbody>
+	<?php foreach ($articles as $article)  { ?>
+	 <tr>
+		<td> <?= $article['id'] ?></td>
+		<td> <?= $article['title']; ?></td>
+		<td> <?= $article['content']; ?></td>
+		<td> <?= $article['auteur']; ?></td>
+		<td> <?= $article['created_at']; ?></td>
+		<td> <?= $article['status']; ?></td>
+		<td><button><a href="editpost.php?id=<?=$article['id']; ?>">Edit</a></button></td>
+	 </tr>
 	<?php } ?>
-
+	</tbody>
+</table>
 
 <?php include('includ/footer-back.php');
