@@ -10,4 +10,73 @@ body {
 
 header, footer {
     background-color: #fff;
+    padding: 1rem;
+}
+
+#content {
+    margin: 2rem 0;
+}
+
+ul, ol {list-style: none;}
+
+a{text-decoration: none;}
+
+nav ul {display: flex;gap:1rem;}
+
+.paginate {margin: 1rem;display: flex;justify-content: center;gap:1rem;}
+.paginate li a{background-color: #fff;padding: .3rem 1rem;border-radius: 5px;transition: all 1s;}
+.paginate li a:hover{background-color: #ddd;}
+
+.wrap {max-width: 1200px; width:100%;margin: 0 auto;}
+.wrap2 {max-width: 500px; width:100%;margin: 0 auto;padding: 0 10px;}
+
+header .wrap {display: flex;justify-content: space-between;align-items: center;}
+
+label {display: block;}
+
+input, select,textarea {
+    width: 100%;
+    padding: 1rem;
+}
+
+textarea {width: 100%;resize: none;}
+
+.error {color:red;}
+
+h1,h2,h3,h4,h5 {color:#fff;}
+
+th, td {
+    border: 1px solid black;
+    padding: .4rem;
+}
+
+table {
+    width: 100%;
+}
+
+ul.ulcenter {text-align: center;}
+ul.ulcenter li {display: inline-block;}
+
+#articles {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+#articles .article {
+    width: 30%;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#articles .article h2 {
+    margin-bottom: 1rem;
+}
+
+#articles .article img {
+    width: 100%;
+}
+
+#search input {
+    padding: .3rem;
 }

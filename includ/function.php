@@ -9,7 +9,7 @@ function debug($tab)
 
 function dump($tab)
 {
-	echo '<pre>';
+	echo '<pre style="background-color:black;">';
 	var_dump($tab);
 	echo '</pre>';
 }
@@ -65,7 +65,7 @@ function getValue($key,$data = null){
     return '';
 }
 
-function abortt404() {
+function abort404() {
 	header('HTTP/1.0 404 Not Found');
 	header('Location: 404.php');
 }
@@ -74,3 +74,18 @@ function getError($errors, $key) {
 	return (!empty($errors[$key])) ? $errors[$key] : '';
 }
 
+function pageIn($page, $itemPage, $count)
+{
+	$html = '';
+	$html .= '<ul class="paginate">';
+	if($page > 1) {
+		$paged = $page - 1;
+		$html .= '<li><a href="index.php?page='.$paged.'">Précédent</a></li>';
+	}
+	if($page * $itemPage < $count) {
+		$paged = $page + 1;
+		$html .= '<li><a href="index.php?page='.$paged.'">Suivant</a></li>';
+	}
+	$html .= '</ul>';
+	return $html;
+}
