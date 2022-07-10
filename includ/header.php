@@ -11,9 +11,15 @@
 <header>
     <nav>
         <ul>
-            <li><a href="index.php">Home</a></li>
+            <li><a href="index.php?page=1">Home</a></li>
             <li><a href="admin/index.php">Admin</a></li>
+    <div id="search" class="wrap2">
+	<form action="search.php" method="get">
+	    <input type="search" name="search" placeholder="recherche" value="<?php if(!empty($_GET['search'])) {echo $_GET['search'];} ?>">
+	    <span style='background-color: black;'></span>
+	</form>
         </ul>
+    </div>
     </nav>
 </header>
 <div id="content">
