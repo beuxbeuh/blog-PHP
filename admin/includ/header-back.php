@@ -11,7 +11,7 @@
 <header>
     <nav>
         <ul>
-            <li><a href="../../index.php">Front</a></li>
+            <li><a href="../../index.php?page=1">Front</a></li>
             <li><a href="index.php">Dashboard</a></li>
 	    <li><a href="newpost.php">New Product</a></li>
 	    <li><a href="listingpost.php">List Product</a></li>
