@@ -9,7 +9,7 @@ function debug($tab)
 
 function dump($tab)
 {
-	echo '<pre>';
+	echo '<pre style="background-color:black;">';
 	var_dump($tab);
 	echo '</pre>';
 }
@@ -42,7 +42,7 @@ function validEmail($er, $data, $key)
 
 function cleanXss($key)
 {
-	return trim(strip_tags($key));
+	return trim(strip_tags($key), "\n");
 }
 
 function generateGroupName($tab1, $tab2, string $balise = 'div', string $color = 'pink')
@@ -52,4 +52,40 @@ function generateGroupName($tab1, $tab2, string $balise = 'div', string $color =
 
 	$concat = ucwords($index1 . ' ' . $index2);
 	return '<'.$balise.' style="background-color: ' .$color. ';">' .$concat. '</'.$balise.'>';
+}
+
+function getValue($key,$data = null){
+    if(!empty($_POST[$key])) {
+        return $_POST[$key];
+    } else {
+        if(!empty($data)) {
+            return $data;
+        }
+    }
+    return '';
+}
+
+function abort404() {
+	header('HTTP/1.0 404 Not Found');
+	header('Location: 404.php');
+}
+
+function getError($errors, $key) {
+	return (!empty($errors[$key])) ? $errors[$key] : '';
+}
+
+function pageIn($page, $itemPage, $count)
+{
+	$html = '';
+	$html .= '<ul class="paginate">';
+	if($page > 1) {
+		$paged = $page - 1;
+		$html .= '<li><a href="index.php?page='.$paged.'">Précédent</a></li>';
+	}
+	if($page * $itemPage < $count) {
+		$paged = $page + 1;
+		$html .= '<li><a href="index.php?page='.$paged.'">Suivant</a></li>';
+	}
+	$html .= '</ul>';
+	return $html;
 }

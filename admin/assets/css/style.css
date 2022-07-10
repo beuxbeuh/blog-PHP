@@ -1,0 +1,42 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #7fa982;
+}
+
+header, footer {
+    background-color: #cac3c3;
+    padding: 1rem;
+}
+
+#content { margin: 2rem 0;}
+
+ul, ol { list-style: none;}
+
+a { text-decoration: none;}
+
+nav ul { display: flex; gap: 1rem;}
+
+.wrap {max-width: 1000px; width: 100%; margin: 0 auto;}
+
+.wrap2 { max-width: 500px; width: 100%; margin: 0 auto;}
+
+label { display: block;}
+
+input, select { width: 100%; padding: 1rem;}
+
+textarea { width: 100%; resize: none;}
+
+.error { color: #f00;}
+
+thead, tbody { max-width: 1000px; width: 20%;}
+
+th, td { border: 1px solid #000; padding: 0.4rem;}
+
+
+
+table { width: 100%;}

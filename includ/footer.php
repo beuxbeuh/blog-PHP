@@ -1,10 +1,8 @@
 </div>
 <footer>
-
-
-    <p>footer</p>
-
-
+    <div class="wrap">
+	<p>footer</p>
+    </div>
 </footer>
 
 </body>
